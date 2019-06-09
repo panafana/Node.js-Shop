@@ -1,0 +1,11 @@
+.card img{
+    max-height: 250px;
+}
+.card .card-text{
+    color:darkgray
+}
+.price{
+    font-weight: bold;
+    font-size: 16px;
+    padding-bottom: 10px;
+}
