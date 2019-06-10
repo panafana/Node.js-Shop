@@ -22,13 +22,12 @@ module.exports = function Cart(oldCart) {
             this.totalQty--;
             this.totalPrice-= storedItem.item.price;     
         }else{    
-            this.totalQty-=storedItem.qty;
-            this.totalPrice-= storedItem.item.price * storedItem.qty;
+            this.totalQty-=1;
+            this.totalPrice-= storedItem.item.price;
             storedItem.qty=0;
             storedItem.price = 0;
             delete this.items[id];
-        }
-        
+        }        
     }
     
     this.removeAll = function(item,id){
