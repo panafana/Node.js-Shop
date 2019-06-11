@@ -73,7 +73,7 @@ router.get('/products', function(req, res, next) {
     Product.find(function(err,docs){
         var products = [];
         for(var i=0;i<docs.length;i++){
-            products.push(docs.slice(i,i+chunkSize));
+            products.push(docs(i));
         }
         res.json(products);
     });
