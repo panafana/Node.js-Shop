@@ -7,8 +7,8 @@ var Order = require('../models/order');
 var User = require('../models/user');
 
 router.post('/signin', function(req,res){
-    var email =req.params.email;
-    var password = req.params.password;
+    var email =req.body.email;
+    var password = req.body.password;
     var errors = req.validationErrors();
     if(errors){
         var messages = [];
@@ -34,8 +34,8 @@ router.post('/signin', function(req,res){
 
 
 router.post('/signup', function(req,res){
-    var email =req.params.email;
-    var password = req.params.password;
+    var email =req.body.email;
+    var password = req.body.password;
     var errors = req.validationErrors();
     console.log("email" ,email);
         console.log("password" ,password);
