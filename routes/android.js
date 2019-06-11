@@ -75,7 +75,7 @@ router.get('/products', function(req, res, next) {
         for(var i=0;i<docs.length;i++){
             products.push(docs.slice(i,i+chunkSize));
         }
-        res.send('shop/index', {  products: products });
+        res.send( products );
     });
   
 });
