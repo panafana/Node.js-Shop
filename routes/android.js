@@ -9,6 +9,7 @@ var User = require('../models/user');
 router.post('/signin', function(req,res){
     var email =req.body.email;
     var password = req.body.password;
+    console.log("email" ,email);
     var errors = req.validationErrors();
     if(errors){
         var messages = [];
