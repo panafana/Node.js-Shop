@@ -71,11 +71,11 @@ router.post('/signup', function(req,res){
 router.get('/products', function(req, res, next) {
     //var successMsg = req.flash('success')[0];
     Product.find(function(err,docs){
-        var products = [];
+        /*var products = [];
         for(var i=0;i<docs.length;i++){
             products.push(docs);
-        }
-        res.json(products);
+        }*/
+        res.json(docs);
     });
   
 });
