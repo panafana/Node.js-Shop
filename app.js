@@ -12,6 +12,7 @@ var validator = require('express-validator');
 var MongoStore = require('connect-mongo')(session);
 
 var indexRouter = require('./routes/index');
+var androidRouter = require('./routes/android');
 var userRouter = require('./routes/user');
 
 var app = express();
@@ -45,7 +46,7 @@ app.use(function(req,res,next){
     res.locals.session = req.session;
     next();
 });
-
+app.use('/android',androidRouter);
 app.use('/user', userRouter);
 app.use('/', indexRouter);
 
