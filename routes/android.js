@@ -37,6 +37,9 @@ router.post('/signup', function(req,res){
     var email =req.params.email;
     var password = req.params.password;
     var errors = req.validationErrors();
+    console.log("email" ,email);
+        console.log("password" ,password);
+
     if(errors){
         var messages = [];
         errors.forEach(function(error){
