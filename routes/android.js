@@ -68,6 +68,18 @@ router.post('/signup', function(req,res){
     });
 });
 
+router.get('/products', function(req, res, next) {
+    //var successMsg = req.flash('success')[0];
+    Product.find(function(err,docs){
+        var products = [];
+        for(var i=0;i<docs.length;i++){
+            products.push(docs.slice(i,i+chunkSize));
+        }
+        res.send('shop/index', {  products: products });
+    });
+  
+});
+
 
 
 
