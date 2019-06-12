@@ -85,23 +85,23 @@ router.get('/products', function(req, res, next) {
 
 router.post('/checkout',function(req,res, next){
 
-    var order = new OrderAndroid({
+    /*var order = new OrderAndroid({
         user: req.body.email,
         cart: req.body.items,
         address: req.body.address,
         name: req.body.name
-    });
-    //console.log(req.body);
-    var jsonContent = JSON.parse(req.body);
+    });*/
+    console.log("request")
+    console.log(req);
+    console.log("body")
+    console.log(req.body);
+    var jsonContent = JSON.parse(req);
     console.log("blah");
     console.log(jsonContent.email);
     console.log(jsonContent.address);
     console.log(jsonContent.name);
     console.log(jsonContent.items);
-
-
-
-    order.save(function(err,result){ 
+    //order.save(function(err,result){ 
     res.send("Success");
     });
 });
