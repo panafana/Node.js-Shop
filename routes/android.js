@@ -91,7 +91,7 @@ router.post('/checkout',function(req,res, next){
     });*/
     console.log("body")
     console.log(req.body);
-    var jsonContent = JSON.parse(req);
+    var jsonContent = JSON.parse(req.body);
     console.log("blah");
     console.log(jsonContent.email);
     console.log(jsonContent.address);
