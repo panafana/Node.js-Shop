@@ -89,7 +89,7 @@ router.post('/checkout',function(req,res, next){
         user: jsonContent.email,
         cart: jsonContent.items,
         address: jsonContent.address,
-        name: jsonContent.name
+        name: jsonContent.name,
         totalQty:jsonContent.totalQty,
         totalPrice:jsonContent.totalPrice
     });
