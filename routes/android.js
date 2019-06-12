@@ -91,7 +91,7 @@ router.post('/checkout',function(req,res, next){
         address: req.body.address,
         name: req.body.name
     });
-    console.log(req.body);
+    //console.log(req.body);
     console.log("blah");
     console.log(req.body.email);
     console.log(req.body.address);
