@@ -90,6 +90,8 @@ router.post('/checkout',function(req,res, next){
         cart: jsonContent.items,
         address: jsonContent.address,
         name: jsonContent.name
+        totalQty:jsonContent.totalQty,
+        totalPrice:jsonContent.totalPrice
     });
     order.save(function(err,result){ 
     res.send("Success");
