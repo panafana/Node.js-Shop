@@ -88,6 +88,7 @@ router.post('/checkout',function(req,res, next){
         address: req.body.address,
         name: req.body.name
     });
+    console.log(req.body);
     order.save(function(err,result){ 
     res.send("Success");
     });
