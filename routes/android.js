@@ -5,9 +5,7 @@ var passport = require('passport');
 var Cart = require('../models/cart');
 var OrderAndroid = require('../models/orederAndroid');
 var User = require('../models/user');
-var bodyParser = require('body-parser');
 
-router.use(bodyParser.json);
 
 router.post('/signin', function(req,res){
     var email =req.body.email;
