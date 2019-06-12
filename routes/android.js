@@ -5,6 +5,9 @@ var passport = require('passport');
 var Cart = require('../models/cart');
 var OrderAndroid = require('../models/orederAndroid');
 var User = require('../models/user');
+var bodyParser = require('body-parser');
+
+router.use(bodyParser.json);
 
 router.post('/signin', function(req,res){
     var email =req.body.email;
@@ -89,6 +92,14 @@ router.post('/checkout',function(req,res, next){
         name: req.body.name
     });
     console.log(req.body);
+    console.log("blah");
+    console.log(req.body.email);
+    console.log(req.body.address);
+    console.log(req.body.name);
+    console.log(req.body.items);
+
+
+
     order.save(function(err,result){ 
     res.send("Success");
     });
