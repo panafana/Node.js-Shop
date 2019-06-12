@@ -82,27 +82,18 @@ router.get('/products', function(req, res, next) {
 });
 
 router.post('/checkout',function(req,res, next){
-
-    /*var order = new OrderAndroid({
-        user: req.body.email,
-        cart: req.body.items,
-        address: req.body.address,
-        name: req.body.name
-    });*/
-    console.log("body")
-    console.log(req.body);
     var temp = JSON.stringify(req.body);
     var jsonContent = JSON.parse(temp);
     console.log("blah");
-    console.log(jsonContent);
-    console.log(jsonContent.email);
-    console.log(jsonContent.address);
-    console.log(jsonContent.name);
-    console.log(jsonContent.items[0].price);
-    /*order.save(function(err,result){ 
+     var order = new OrderAndroid({
+        user: jsonContent.email,
+        cart: jsonContent.items,
+        address: jsonContent.address,
+        name: jsonContent.name
+    });
+    order.save(function(err,result){ 
     res.send("Success");
-    });*/
-    res.send("Success");
+    });
 
 });
 
