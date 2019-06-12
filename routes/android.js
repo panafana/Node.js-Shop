@@ -91,13 +91,13 @@ router.post('/checkout',function(req,res, next){
     });*/
     console.log("body")
     console.log(req.body);
-    var jsonContent = JSON.stringify(req.body.trim());
+    var jsonContent = JSON.parse(req.body);
     console.log("blah");
     console.log(jsonContent);
     console.log(jsonContent.email);
     console.log(jsonContent.address);
     console.log(jsonContent.name);
-    console.log(jsonContent.items);
+    console.log(jsonContent.items[0].price);
     /*order.save(function(err,result){ 
     res.send("Success");
     });*/
