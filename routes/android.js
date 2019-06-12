@@ -3,7 +3,7 @@ var router = express.Router();
 var Product = require('../models/product')
 var passport = require('passport');
 var Cart = require('../models/cart');
-var Order = require('../models/order');
+var OrderAndroid = require('../models/orederAndroid');
 var User = require('../models/user');
 
 router.post('/signin', function(req,res){
@@ -78,6 +78,19 @@ router.get('/products', function(req, res, next) {
         res.json(docs);
     });
   
+});
+
+router.post('/checkout',function(req,res, next){
+
+    var order = new OrderAndroid({
+        user: req.body.email,
+        cart: req.body.items,
+        address: req.body.address,
+        name: req.body.name
+    });
+    order.save(function(err,result){ 
+    res.send("Success");
+    });
 });
 
 
