@@ -99,9 +99,11 @@ router.post('/checkout',function(req,res, next){
     console.log(jsonContent.address);
     console.log(jsonContent.name);
     console.log(jsonContent.items);
-    //order.save(function(err,result){ 
+    /*order.save(function(err,result){ 
     res.send("Success");
-    });
+    });*/
+    res.send("Success");
+
 });
 
 
