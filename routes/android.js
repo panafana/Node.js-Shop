@@ -92,11 +92,12 @@ router.post('/checkout',function(req,res, next){
         name: req.body.name
     });
     //console.log(req.body);
+    var jsonContent = JSON.parse(req.body);
     console.log("blah");
-    console.log(req.body.email);
-    console.log(req.body.address);
-    console.log(req.body.name);
-    console.log(req.body.items);
+    console.log(jsonContent.email);
+    console.log(jsonContent.address);
+    console.log(jsonContent.name);
+    console.log(jsonContent.items);
 
 
 
