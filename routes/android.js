@@ -89,8 +89,6 @@ router.post('/checkout',function(req,res, next){
         address: req.body.address,
         name: req.body.name
     });*/
-    console.log("request")
-    console.log(req);
     console.log("body")
     console.log(req.body);
     var jsonContent = JSON.parse(req);
